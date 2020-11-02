@@ -3,7 +3,7 @@ class Disfraz {
 	var property nombre
 	var property fechaConfeccion
 	
-	method puntos(duenio,fiesta) = caracteristicas.sum({caracteristica => caracteristica.ountejae(duenio,fiesta)})	
+	method puntos(duenio,fiesta) = caracteristicas.sum({caracteristica => caracteristica.puntaje(duenio,fiesta)})	
 	
 	method mayorADiezPuntos(duenio,fiesta) = self.puntos(duenio,fiesta) > 10
 	method nombrePar() = nombre.length().even()

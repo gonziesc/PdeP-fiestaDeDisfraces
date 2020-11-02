@@ -12,5 +12,6 @@ class Fiesta {
 }
 
 object fiestaInolvidable inherits Fiesta{
+    AGREGAR EXPECION DE AGREGAR INVITADO
 	override method asistentes() = asistentes.filter({asistente => asistente.sexy() && asistente.satisfechoConSuDisfraz(self)})
 }

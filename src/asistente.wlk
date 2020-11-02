@@ -10,7 +10,6 @@ class Asistente {
 	
 	method satisfechoConSuDisfraz(fiesta) = disfraz.mayorADiezPuntos(self,fiesta)
 	method puntaje(fiesta) = disfraz.puntaje(self, fiesta)
-	
 }
 
 class Caprichoso inherits Asistente{
