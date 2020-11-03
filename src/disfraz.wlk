@@ -11,8 +11,10 @@ class Disfraz {
 	method puntajeIgualA(duenio,fiesta,puntaje) = self.puntos(duenio,fiesta) == puntaje
 }
 
+class NivelDeGraciaInvalidoException inherits Exception{}
+
 class Gracioso {
-		var property nivelDeGracia
+	var property nivelDeGracia
 	
 	method puntaje(duenio, fiesta) {
 		return nivelDeGracia * self.multiplicador(duenio)
@@ -24,6 +26,14 @@ class Gracioso {
 		} else {
 			return 1
 		}
+	}
+	
+	method nivelValido(unNivelDeGracia) = unNivelDeGracia > 0 && unNivelDeGracia < 10
+	
+	method nivelDeGracia(unNivelDeGracia) {
+		if(self.nivelValido(unNivelDeGracia)) {
+			nivelDeGracia = unNivelDeGracia
+		} else throw new NivelDeGraciaInvalidoException(message = "El nivel de gracia no está entre 1 y 10")
 	}
 }
 

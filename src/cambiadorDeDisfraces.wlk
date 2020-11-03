@@ -6,10 +6,14 @@ object cambiadorDeDisfraces {
 	method algunEstaDisconforme(unaFiesta, unAsistente, otroAsistente) = !unAsistente.satisfechoConSuDisfraz(unaFiesta) || !otroAsistente.satisfechoConSuDisfraz(unaFiesta) 
 	
 	method algunoPasaAEstarConforme(unaFiesta, unAsistente, otroAsistente) {
-		var unDisfraz = unAsistente.disfraz()
-		var otroDisfraz = otroAsistente.disfraz()
+		self.intercambiarTrajes(unAsistente, otroAsistente)
+		return unAsistente.satisfechoConSuDisfraz(unaFiesta) || otroAsistente.satisfechoConSuDisfraz(unaFiesta)
+	}
+	
+	method intercambiarTrajes(unAsistente, otroAsistente) {
+		const unDisfraz = unAsistente.disfraz()
+		const otroDisfraz = otroAsistente.disfraz()
 		unAsistente.disfraz(otroDisfraz)
 		otroAsistente.disfraz(unDisfraz)
-		return unAsistente.satisfechoConSuDisfraz(unaFiesta) || otroAsistente.satisfechoConSuDisfraz(unaFiesta)
 	}
 } 
