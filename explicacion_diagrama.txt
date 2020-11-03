@@ -1,0 +1,6 @@
+Dentro del diagrama podemos ver que existe la clase región, la cuál tiene un atributo nombre, y los mensajes castillos y ciudades (ambos devuelven sets) y poblacionTotal, que retorna un número. 
+La región ademas tiene una lista de lugares, la cuál es una clase abstracta con 3 atributos y el método calcularDefensas que es el método abstracto. 
+De lugar heredan Ciudad y Castillo con sus diferentes atributos, las cuales deben implementar el mensaje calcularDefensas.
+A su vez, la región tiene una clase Casa denominada casaPrincipal como atributo. La casa tiene un lugar denominado origen como atrributo, y también contiene una instancia de su misma clase, denominada vasallaDe. Por último, también tiene una lista de fuerzas militares.
+Fuerza militar es una interfaz que tiene como contrato el mensaje atacarA(Lugar), mensaje que implementan las clases Aerea, Terrestre y Naval con sus diferentes atributos.
+Por último, tenemos al objeto clima que es usado por la región en algunos de sus métodos, la cual tiene el mensaje temperatura.
