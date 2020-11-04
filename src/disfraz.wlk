@@ -7,7 +7,7 @@ class Disfraz {
 	
 	method mayorADiezPuntos(duenio,fiesta) = self.puntos(duenio,fiesta) > 10
 	method nombrePar() = nombre.length().even()
-	method trajeRapido(fiesta) = fechaConfeccion - fiesta.fecha() < 30 
+	method trajeRapido(fiesta) = fiesta.cantidadDeDiasDesde(fechaConfeccion) < 30 
 	method puntajeIgualA(duenio,fiesta,puntaje) = self.puntos(duenio,fiesta) == puntaje
 }
 
@@ -40,7 +40,7 @@ class Gracioso {
 class Tobara {
 	var property fechaDeCompra
 	method puntaje(duenio, fiesta) {
-		if (fiesta.disfrazFueCompradoConAnticipacion(fechaDeCompra)) {
+		if (fiesta.cantidadDeDiasDesde(fechaDeCompra) > 2) {
 			return 5
 		} else {
 			return 3
@@ -66,4 +66,8 @@ object mickeyMouse{
 
 object osoCarolina{
 	const property puntos = 6
+}
+
+object sinDisfraz inherits Disfraz{
+	
 }

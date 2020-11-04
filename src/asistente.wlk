@@ -1,5 +1,7 @@
+import disfraz.*
+
 class Asistente {
-	var property disfraz
+	var property disfraz = sinDisfraz
 	var property personalidad
 	var property edad
 	
@@ -11,6 +13,7 @@ class Asistente {
 	method satisfechoConSuDisfraz(fiesta) = disfraz.mayorADiezPuntos(self,fiesta) && self.satisfechoSegunTipo(fiesta)
 	method puntaje(fiesta) = disfraz.puntos(self, fiesta)
 	method satisfechoSegunTipo(fiesta)
+	method tieneDisfraz() = disfraz !== sinDisfraz
 }
 
 class Caprichoso inherits Asistente{
@@ -26,3 +29,4 @@ class Numerologo inherits Asistente{
 	
 	override method satisfechoSegunTipo(fiesta) = disfraz.puntajeIgualA(self, fiesta, puntaje)
 }
+
